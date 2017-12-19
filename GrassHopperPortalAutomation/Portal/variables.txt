@@ -1,0 +1,19 @@
+*** Variables ***
+
+${env_staging}                       https://portal.us-stg.ghus-aws.com/Login.aspx
+${browser}                           Chrome
+${PortalLoginPageTitle}              Sign in to Grasshopper
+${SignInPageText}                    Sign in to continue
+
+${PortalHomePageTitle}               Grasshopper - Home
+${PortalMyAccountPageTitle}          Grasshopper - My Account - Overview
+
+
+
+
+${HOST}                              papi.us-stg.ghus-aws.com
+${endpoint}                          https://${HOST}/api/NumberlockSession
+${HeaderName}                        Content-Type
+${HeaderValue}                       application/json
+${HeaderName1}                       Authorization
+${HeaderValue1}                      Basic Z3Jhc3Nob3BwZXI6Z2g4JDAx

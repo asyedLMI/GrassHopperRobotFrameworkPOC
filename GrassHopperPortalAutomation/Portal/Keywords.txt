@@ -1,0 +1,17 @@
+*** Keywords ***
+
+PortalLogin
+    [Documentation]    This keyword keys in username and password and clicks on Sign In button on the portal
+    [Arguments]    ${UserName}    ${Password}
+    Input Text    css:input#ctl00_MainContent_UserName    ${UserName}
+    Input Text    css:input#ctl00_MainContent_Password    ${Password}
+    Click Element    css:input#ctl00_MainContent_signInButton
+
+CheckLandingPage
+    [Documentation]    This keywords verifies if we are at the correct page. Write it generic enough. Need to finish implemenation
+
+
+LaunchPortal
+    [Documentation]    This keyword opens a new browser instance and launches the url of the environment specified in the keyword
+    [Arguments]    ${Environment}    ${Browser}
+    Open Browser    ${Environment}    ${Browser}

@@ -1,0 +1,56 @@
+*** Settings ***
+Library           OperatingSystem
+Library           Selenium2Library
+Library           RequestsLibrary
+
+Resource          ../Keywords.txt
+Resource          ../variables.txt
+
+
+
+*** Test Cases ***
+Test the Account Information is correctly displayed under My Accounts
+    [Documentation]    Validate the Plan name, Contact and Billing Information shows up correctly on the My Account page.
+    [Tags]    GrassHopper    UI
+    LaunchPortal    ${env_staging}    ${browser}
+
+    PortalLogin    user_1    abc123
+
+    Log    Verify title of the Home page
+    ${TitleVerifyStatus1}=    Run keyword and return status    Title Should Be    ${PortalHomePageTitle}
+
+    Log    Verify home page has a Welcome text with username
+    wait until keyword succeeds    2    2    Element Text Should Be    css:span#ctl00_ctl00_MiddlePortionPlaceHolder_WelcomeSpan    Welcome User 1
+
+    # Go to My Account tab
+    Click Element    css:a.myaccount
+
+    Log    Verify title of the My Account page
+    ${TitleVerifyStatus1}=    Run keyword and return status    Title Should Be    ${PortalMyAccountPageTitle}
+
+    # Checking plan name is correct
+    wait until keyword succeeds    2    2    Element Text Should Be    css:div#ctl00_ctl00_MiddlePortionPlaceHolder_MainContentPlaceHolder_GeneralOverviewUpdatePanel .block h2    Your Plan: Ramp
+
+    # Checking Contact information IC Shield message is correct
+    wait until keyword succeeds    2    2    Element Text Should Be    css:div.block.block_last ul.block_split_left li:nth-child(1)    For your security, editing the contact information can only be done by contacting us at 1.800.279.1455
+
+    # Checking Contact - First Name is correct
+    wait until keyword succeeds    2    2    Element Text Should Be    css:div.block.block_last ul.block_split_left li:nth-child(2)    First Name\n Sean
+
+    Log    Signing Out of Grasshopper portal
+    Click Element    css:a#ctl00_ctl00_LoginStatus
+
+    # Close out Browser
+    Close Browser
+
+
+Test PAPI - Number Lock Session1
+    [Documentation]    This is to test the PAPI - Number Lock Session POST method. Ensures it returns a 200 status code.
+    [Tags]    papi1
+    Create Session    ghpapi    https://papi.us-stg.ghus-aws.com    verify=true    disable_warnings=0
+    ${headerinfo}=    create dictionary    Content-Type=application/json    Authorization=Basic Z3Jhc3Nob3BwZXI6Z2g4JDAx
+    ${respObjnew}=    Post Request    ghpapi    /api/NumberlockSession    headers=${headerinfo}
+    Should Be Equal As Strings    ${respObjnew.status_code}    200
+
+
+
