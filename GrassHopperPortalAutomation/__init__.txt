@@ -1,2 +1,4 @@
+
 *** Settings ***
-Resource          CommonResources/DEPENDENCIES.txt
+
+Resource        DEPENDENCIES.txt

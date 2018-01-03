@@ -1,0 +1,11 @@
+*** Variables ***
+
+${PortalLoginPageTitle}              Sign in to Grasshopper
+${SignInPageText}                    Sign in to continue
+
+${PortalHomePageTitle}               Grasshopper - Home
+${PortalMyAccountPageTitle}          Grasshopper - My Account - Overview
+
+
+${WelcomeHeading}                    css:span#ctl00_ctl00_MiddlePortionPlaceHolder_WelcomeSpan
+${MyAccountTab}                      css:a.myaccount

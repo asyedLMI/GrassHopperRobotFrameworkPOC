@@ -1,9 +1,0 @@
-*** Settings ***
-Library           OperatingSystem
-Library           Selenium2Library
-Library           XML
-Library           Collections
-Library           DateTime
-Library           Process
-Library           String
-Library           AppiumLibrary

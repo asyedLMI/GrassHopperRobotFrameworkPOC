@@ -1,29 +1,25 @@
 *** Settings ***
-Library           OperatingSystem
-Library           Selenium2Library
-Library           RequestsLibrary
 
-Resource          ../Keywords.txt
-Resource          ../variables.txt
-
+Resource           ../DEPENDENCIES.txt
 
 
 *** Test Cases ***
-Test the Account Information is correctly displayed under My Accounts
+
+Test the Account Information is correctly displayed under My Accounts - Portal Page
     [Documentation]    Validate the Plan name, Contact and Billing Information shows up correctly on the My Account page.
     [Tags]    GrassHopper    UI
     LaunchPortal    ${env_staging}    ${browser}
 
-    PortalLogin    user_1    abc123
+    PortalLogin    ${GHPortalLoginID}    ${GHPortalPassword}
 
     Log    Verify title of the Home page
     ${TitleVerifyStatus1}=    Run keyword and return status    Title Should Be    ${PortalHomePageTitle}
 
     Log    Verify home page has a Welcome text with username
-    wait until keyword succeeds    2    2    Element Text Should Be    css:span#ctl00_ctl00_MiddlePortionPlaceHolder_WelcomeSpan    Welcome User 1
+    wait until keyword succeeds    2    2    Element Text Should Be    ${WelcomeHeading}    Welcome User 1
 
     # Go to My Account tab
-    Click Element    css:a.myaccount
+    Click Element    ${MyAccountTab}
 
     Log    Verify title of the My Account page
     ${TitleVerifyStatus1}=    Run keyword and return status    Title Should Be    ${PortalMyAccountPageTitle}
@@ -44,13 +40,6 @@ Test the Account Information is correctly displayed under My Accounts
     Close Browser
 
 
-Test PAPI - Number Lock Session1
-    [Documentation]    This is to test the PAPI - Number Lock Session POST method. Ensures it returns a 200 status code.
-    [Tags]    papi1
-    Create Session    ghpapi    https://papi.us-stg.ghus-aws.com    verify=true    disable_warnings=0
-    ${headerinfo}=    create dictionary    Content-Type=application/json    Authorization=Basic Z3Jhc3Nob3BwZXI6Z2g4JDAx
-    ${respObjnew}=    Post Request    ghpapi    /api/NumberlockSession    headers=${headerinfo}
-    Should Be Equal As Strings    ${respObjnew.status_code}    200
 
 
 

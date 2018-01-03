@@ -1,0 +1,17 @@
+*** Settings ***
+
+
+Library           OperatingSystem
+Library           Selenium2Library
+Library           Collections
+Library           DateTime
+Library           Process
+Library           String
+Library           RequestsLibrary
+
+
+Resource          Resources/Keywords.txt
+Resource          Resources/Locators.txt
+Resource          Resources/Variables.txt
+
+Resource          Environment/${environment}.txt

@@ -1,0 +1,10 @@
+*** Variables ***
+
+${GHPortalLoginID}                   user_1
+${GHPortalPassword}                  abc123
+
+
+
+
+
+
