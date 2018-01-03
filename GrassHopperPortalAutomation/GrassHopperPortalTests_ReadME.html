@@ -11,6 +11,8 @@
     p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
     span.s1 {font-kerning: none}
     span.s2 {text-decoration: underline ; font-kerning: none}
+    span.s3 {font: 12.0px Menlo; font-kerning: none; color: #24292e; background-color: #f6f8fa; -webkit-text-stroke: 0px #24292e}
+    span.Apple-tab-span {white-space:pre}
   </style>
 </head>
 <body>
@@ -23,6 +25,19 @@
 <p class="p1"><span class="s1">This Document walks you through what tool is being used for GrassHopper - Portal Automation, how to install and set it up, structure of the code in detail, how to run tests on local machine.<span class="Apple-converted-space"> </span></span></p>
 <p class="p1"><span class="s1"><br>
 </span></p>
+<p class="p1"><span class="s2"><b>Pre-Requisite:</b></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s2"><b>Install External Libraries:</b></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   <span class="Apple-tab-span">	</span></span>To Run tests inside this repo, install the following external libraries:</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>1. Selenium2Library — pip install </span><span class="s3">robotframework-selenium2library</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>2. RequestsLibrary — pip install robotframework-requests</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2"><b>Install Browser Drivers:</b></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span></span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>Install Chrome driver and other drivers as needed. Add the location of these browser drivers to your PATH.<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s2"><b>Directory Structure:</b></span></p>
 <p class="p1"><span class="s1"><br>
 <br>
@@ -65,7 +80,8 @@ GrassHopperPortalAutomation is the root directory for this code.<span class="App
 <p class="p1"><span class="s1"><br>
 </span></p>
 <p class="p1"><span class="s2"><b>TestSuite Directory:</b></span></p>
-<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
 <p class="p1"><span class="s1">This directory contains the test cases. Test Cases could be grouped by features, modules, functionality or any other way. Depending on how test cases are grouped, it could refer to different Resources files if needed.<span class="Apple-converted-space"> </span></span></p>
 <p class="p1"><span class="s1"><br>
 </span></p>
@@ -75,19 +91,21 @@ We could use ‘[tags]’ notation to add tags to your test cases. For ex, say y
 <p class="p1"><span class="s1"><br>
 </span></p>
 <p class="p1"><span class="s2"><b>Running Tests:</b></span></p>
-<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
 <p class="p1"><span class="s1">There are many ways to run test cases from command line. Refer to this page for details.<span class="Apple-converted-space"> </span></span></p>
 <p class="p1"><span class="s1">http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options</span></p>
-<p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><br>
 </span></p>
 <p class="p1"><span class="s1">open terminal and cd into the root directory (GrassHopperPortalAutomation)</span></p>
 <p class="p1"><span class="s1">$ pybot --variable environment:Staging --outputdir TestResults TestSuite</span></p>
 <p class="p1"><span class="s1"><br>
 -- variable is used to pass in variables to the tests from command line. In this case, we are passing the environment name</span></p>
-<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
 <p class="p1"><span class="s1">-- outputdir is used to specify the location of the result files, in this case we are saying save under TestResults directory</span></p>
-<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
 <p class="p1"><span class="s1">TestSuite is the location of the test case files</span></p>
 <p class="p1"><span class="s1"><br>
 </span></p>
