@@ -1,0 +1,73 @@
+*** Settings ***
+
+Documentation     This covers validating the login scenarios for GH iOS Application
+
+Suite Setup        Invoke GH App
+Suite Teardown     Close GH App
+
+
+Resource    ../DEPENDENCIES.txt
+
+
+*** Test Cases ***
+
+Test SignIn button is disabled when no userid and password are entered
+    [Documentation]    Checking SignIn button is diabled when there is no userid and password values.
+    [tags]    ios1    login
+
+    Clear Text    ${TextBox_LoginID}
+    Clear Text    ${TextBox_Password}
+
+    ${SignInEnabled}=    AppiumLibrary.Get Element Attribute    ${Button_SignID}    enabled
+    Run Keyword If      '${SignInEnabled}'=='true'    Fail    SignIn Button is not disabled when no userid and password available. Please check the code
+
+
+Test Error popup message appears when logging in with invalid userid
+    [Documentation]    Verify when signing in with Invalid user id an error pop up message appears.
+    [tags]    ios2    login
+
+    Clear Text                    ${TextBox_LoginID}
+    Enter Text                    ${TextBox_LoginID}    aaa
+
+    Clear Text                    ${TextBox_Password}
+    Enter Text                    ${TextBox_Password}    ${GHPassword}
+
+    AppiumLibrary.Click Element   ${Button_SignID}
+
+    AppiumLibrary.Wait Until Page Contains Element    ${InValidLoginPopUP_Name}
+    AppiumLibrary.Wait Until Page Contains Element    ${InValidLoginPopUp_Text}
+    AppiumLibrary.Wait Until Page Contains Element    ${InValidLoginPopUp_Ok_Button}
+
+    AppiumLibrary.Click Element                       ${InValidLoginPopUp_Ok_Button}
+
+
+
+Verify user can login to GH App with Valid login credentials
+    [Documentation]    Testing to ensure users with valid accounts can login to app
+    [tags]    ios3    ghioslogin
+
+    Clear Text                        ${TextBox_LoginID}
+    Enter Text                        ${TextBox_LoginID}    ${GHLoginID}
+
+    Clear Text                        ${TextBox_Password}
+    Enter Text                        ${TextBox_Password}    ${GHPassword}
+
+    AppiumLibrary.Click Element       ${Button_SignID}
+
+    AppiumLibrary.Wait Until Page Contains Element    ${Label_EnterYourMobileNumber}
+
+
+Test Incoming calls are logged
+    [tags]    ios4    iostest
+    ${PhoneAppID}    Open App on Device    ${PhoneAppBID}
+    Set Global Variable    ${PhoneAppID}
+
+    Make Phone Call
+
+    Switch Application    ${GHAppID}
+
+    Launch Application
+
+    #AppiumLibrary.Wait Until Page Contains Element    ${Label_EnterYourMobileNumber}
+
+

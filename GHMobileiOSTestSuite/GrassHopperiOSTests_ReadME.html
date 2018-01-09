@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>GrassHopper Portal Test How To Documentation</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1504.83">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 12.0px; font: 10.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 10.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 12.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 11.7px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 11.7px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {text-decoration: underline ; font-kerning: none}
+    span.s3 {font: 12.0px Helvetica; font-kerning: none}
+    span.s4 {font: 13.6px Menlo; font-kerning: none; color: #24292e; background-color: #f6f8fa; -webkit-text-stroke: 0px #24292e}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<h1 style="margin: 0.0px 0.0px 13.4px 0.0px; text-align: center; line-height: 23.0px; font: 20.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>GrassHopper Mobile iOS Test Documentation<span class="Apple-converted-space"> </span></b></span></h1>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<h2 style="margin: 0.0px 0.0px 12.4px 0.0px; line-height: 17.0px; font: 15.0px Helvetica; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Summary:<span class="Apple-converted-space"> </span></b></span></h2>
+<p class="p4"><span class="s1">This Document walks you through what tool is being used for GrassHopper - Mobile iOS Automation, how to install and set it up, structure of the code in detail, how to run tests on local machine.<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"></span><br></p>
+<p class="p4"><span class="s2"><b>Pre-Requisite:<span class="Apple-converted-space"> </span></b></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s1">Refer to these pages for detailed instructions on how to install Appium and other ios dependencies.<span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><a href="https://confluence.ops.expertcity.com/display/GH/Robot+Framework+-+Installation+Guidelines">https://confluence.ops.expertcity.com/display/GH/Robot+Framework+-+Installation+Guidelines<span class="s3"></span></a></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">   </span></span><span class="s2"><b>Install External Libraries:<span class="Apple-converted-space"> </span></b></span></p>
+<p class="p6"><span class="s2"><b></b></span><br></p>
+<p class="p4"><span class="s2"><b><span class="Apple-converted-space">    </span></b></span><span class="s1"> <span class="Apple-converted-space">  <span class="Apple-tab-span">	</span></span>To Run tests inside this repo, install the following external libraries:<br>
+</span></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span>1. AppiumLibrary — pip install </span><span class="s4">robotframework-appiumlibrary</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">  </span>Run Appium on your local machine:</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">         </span>Open terminal and say ‘Appium’ to start appium server.<span class="Apple-converted-space"> </span></span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p4"><span class="s2"><b>Directory Structure:</b></span></p>
+<p class="p4"><span class="s1"><br>
+<br>
+GHMobileiOSTestSuite is the root directory for this code.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>DEPENDENCIES.txt:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">This file has all the Libraries, Resource files that are needed to Run the GrassHopper Mobile Tests.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>Environment Directory:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">Contains .txt files that represent specific environment configurations where the tests need to run.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">For example, if you want to run tests against a real device, save all of device ID and other details into this file. <br>
+</span></p>
+<p class="p4"><span class="s1">You can create more files to represent each device.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>Resources Directory:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">This directory contains 3 files,</span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">Keywords.txt —&gt; GrassHopper specific keywords that we write go in here.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">Locators.txt —&gt; All the Locators on Mobile iOS App need to be in this file.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">Variables.txt —&gt; Variables that are constant across various environments need to be in this file. For example, plan names, Pricings and others that are common for GH application can be added to this file.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>TestResults Directory:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">This directory is to save the test results after execution. When tests fails, screenshots are saved to this directory as well.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>TestSuite Directory:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">This directory contains the test cases. Test Cases could be grouped by features, modules, functionality or any other way. Depending on how test cases are grouped, it could refer to different Resources files if needed.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>Tagging Test cases:</b></span></p>
+<p class="p4"><span class="s1"><br>
+We could use ‘[tags]’ notation to add tags to your test cases. For ex, say your test case is testing inbox related features, tag them ‘inbox’ and when you want to run all test cases related to inbox, use this tag.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s2"><b>Running Tests:</b></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">There are many ways to run test cases from command line. Refer to this page for details.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1">http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#all-command-line-options</span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">open terminal and cd into the root directory (GrassHopperPortalAutomation)</span></p>
+<p class="p4"><span class="s1">$ pybot --variable environment:RealDevice1 --outputdir TestResults TestSuite</span></p>
+<p class="p4"><span class="s1"><br>
+-- variable is used to pass in variables to the tests from command line. In this case, we are passing the environment name</span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">-- outputdir is used to specify the location of the result files, in this case we are saying save under TestResults directory</span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">TestSuite is the location of the test case files</span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">In this case, all test cases inside TestSuite directory would be run.<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><br>
+</span></p>
+<p class="p4"><span class="s1">To run only test cases with certain tags, use the -- include attribute in command line as below.<span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+</body>
+</html>

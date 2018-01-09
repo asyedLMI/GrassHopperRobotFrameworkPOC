@@ -1,0 +1,17 @@
+*** Variables ***
+
+# Appium Server running on local machine
+
+${REMOTE_URL}              http://localhost:4723/wd/hub
+
+${PLATFORM_NAME}           iOS
+${PLATFORM_VERSION}        11.2
+
+${DEVICE_NAME_real}        iPhone 6s
+
+# this is the uuid of the device.
+${UDID}                    d2b6e1fc284f316036be5f2fbede55ac938f5a6b
+
+# Location of the GrassHopper application built for Afreen's real device
+
+${AfreenAPP}               /Users/asyed/Desktop/Grasshopper-Afreen.app

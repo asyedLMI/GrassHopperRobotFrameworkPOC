@@ -1,0 +1,35 @@
+
+*** Variables ***
+
+####################################  Appium Server location    ########################################################################
+${REMOTE_URL}              http://localhost:4723/wd/hub
+
+#######################################################################################################################################
+
+
+${PLATFORM_NAME}           iOS
+${PLATFORM_VERSION}        11.2
+${DEVICE_NAME}             iPhone 8 Plus
+#${DEVICE_NAME_real}        iPhone 6s
+# this is the uuid of the device.
+${UDID}                    d2b6e1fc284f316036be5f2fbede55ac938f5a6b
+${APP}                     /Users/asyed/Desktop/Grasshopper-Sim.app
+
+
+#Test Object values
+#${TestObjectAPIKey}          F2FC5FF16DB64A0B829B495C8690C59B
+#${TestObjectURL}             https://us1.appium.testobject.com/wd/hub
+${TestObjectURL}             http://asyed0583:6f243a26-a9a1-4b62-93f1-18fd54127bb9@ondemand.saucelabs.com:80/wd/hub
+${TOPLATFORM_NAME}           iOS
+${TOPLATFORM_VERSION}        11.1
+${TOEVICE_NAME}              iPhone 6s Simulator
+${TOAPP}                     sauce-storage:Grasshopper.ipa.zip
+${NewWDA}                    true
+
+${PhoneAppBID}               com.apple.mobilephone
+${GHAppBID}                  com.grasshopper.dialer
+
+##################################### GrassHopper Credentials and Input Data ######################################################################
+
+${GHLoginID}                 user_1
+${GHPassword}                abc123

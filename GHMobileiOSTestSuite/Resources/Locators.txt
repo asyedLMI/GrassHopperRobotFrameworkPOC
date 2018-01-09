@@ -1,0 +1,23 @@
+
+*** Variables ***
+
+################# Objects on Login Screen ###################################################
+
+${TextBox_LoginID}                         accessibility_id=email_input
+${TextBox_Password}                        accessibility_id=password_input
+
+${Button_SignID}                           accessibility_id=sign_in
+
+
+${InValidLoginPopUP_Name}                  accessibility_id=Error
+${InValidLoginPopUp_Text}                  accessibility_id=There was an error signing in. Please check your username and password and try again.
+${InValidLoginPopUp_Ok_Button}             accessibility_id=Ok
+
+
+
+
+
+
+################# Objects on Enter Your Mobile Number Screen #####################################
+
+${Label_EnterYourMobileNumber}         Enter Your Mobile Number

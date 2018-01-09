@@ -1,0 +1,50 @@
+*** Settings ***
+Resource    ../DEPENDENCIES.txt
+
+*** Keywords ***
+
+Invoke GH App
+
+    # This will install the app and open it
+    ${GHAppID}    open application    ${REMOTE_URL}    automationName=Appium    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    deviceName=${DEVICE_NAME_real}    udid=${UDID}    app=${AfreenAPP}    fullReset=true
+
+    # This will open an installed app
+    #${GHAppID}    open application    ${REMOTE_URL}    automationName=Appium    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    deviceName=${DEVICE_NAME_real}    udid=${UDID}    bundleId=${GHAppBID}
+    Set Global Variable    ${GHAppID}
+
+
+Close GH App
+
+    Close All Applications
+
+
+Enter Text
+    [Arguments]                   ${TextBoxName}    ${Value}
+    AppiumLibrary.Input Text      ${TextBoxName}    ${Value}
+
+
+Open App on Device
+    [Arguments]    ${AppBundleId}
+    ${AppID}    open application    ${REMOTE_URL}    automationName=XCUITest    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    udid=${UDID}    deviceName=${DEVICE_NAME_real}    bundleId=${AppBundleId}
+    [Return]    ${AppID}
+
+Make Phone Call
+
+    Click Element    accessibility_id=Keypad
+    Click Element    accessibility_id=7
+    Click Element    accessibility_id=8
+    Click Element    accessibility_id=1
+    Click Element    accessibility_id=6
+    Click Element    accessibility_id=3
+    Click Element    accessibility_id=8
+    Click Element    accessibility_id=9
+    Click Element    accessibility_id=0
+    Click Element    accessibility_id=5
+    Click Element    accessibility_id=0
+
+    Click Button    Call
+
+    sleep    2s
+
+    Click Element    accessibility_id=End call
+

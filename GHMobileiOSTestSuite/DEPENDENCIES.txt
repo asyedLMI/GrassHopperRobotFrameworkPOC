@@ -1,0 +1,11 @@
+*** Settings ***
+
+Library      AppiumLibrary
+#Library      Selenium2Library
+
+Resource     ./Resources/Keywords.txt
+Resource     ./Resources/Locators.txt
+Resource     ./Resources/Variables.txt
+
+Resource     ./Environment/${environment}.txt
+
